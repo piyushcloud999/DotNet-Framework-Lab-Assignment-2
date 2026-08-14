@@ -1,21 +1,27 @@
-﻿using System;
+using System;
 using StudentLibrary;
 
 namespace StudentClient
 {
-    class AccessStudent
+    class AccessStudent : Student
     {
         public void TestAccess()
         {
-            Student s = new Student();
+            Student student = new Student();
 
-            Console.WriteLine("Name: " + s.Name);
+            // Public
+            Console.WriteLine("Public Name: " + student.Name);
 
-            // Console.WriteLine("Age: " + s.Age);
-            // Console.WriteLine("Department: " + s.Department);
-            // Console.WriteLine("CGPA: " + s.CGPA);
-            // Console.WriteLine("College: " + s.College);
-            // Console.WriteLine("Address: " + s.Address);
+            // Protected
+            Console.WriteLine("Protected Department: " + Department);
+
+            // Protected Internal
+            Console.WriteLine("Protected Internal College: " + College);
+
+            Console.WriteLine("Private Age: Cannot Access");
+            Console.WriteLine("Internal CGPA: Cannot Access");
+            Console.WriteLine("Private Protected Address: Cannot Access");
+
         }
     }
 }
